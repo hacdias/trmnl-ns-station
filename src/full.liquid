@@ -1,20 +1,23 @@
 <div class="layout layout--col layout--stretch-y">
   {% if services and services.size > 0 %}
-  <div class="grid grid--cols-2 stretch-y gap--none" data-overflow="true" data-overflow-counter="true" data-overflow-max-cols="2">
-    {% for service in services %}
-    {% comment %} 2-col grid flows row-major, so alternate the shade per
-    visual row (every 2 items) — otherwise one whole column is shaded. {% endcomment %}
-    {% assign row_bg = "bg--white" %}
-    {% assign band = forloop.index0 | divided_by: 2 | modulo: 2 %}
-    {% if band == 1 %}
-    {% assign row_bg = "bg--gray-65" %}
-    {% endif %}
-    {% render "service_row", service: service, logo_size: "w--8", row_bg: row_bg %}
-    {% endfor %}
-  </div>
+    <div
+      class="grid grid--cols-2 stretch-y gap--none"
+      data-overflow="true"
+      data-overflow-counter="true"
+      data-overflow-max-cols="2"
+    >
+      {% for service in services %}
+        {% assign row_bg = 'bg--white' %}
+        {% assign band = forloop.index0 | divided_by: 2 | modulo: 2 %}
+        {% if band == 1 %}
+          {% assign row_bg = 'bg--gray-65' %}
+        {% endif %}
+        {% render 'service_row', service: service, logo_size: 'w--8', row_bg: row_bg %}
+      {% endfor %}
+    </div>
   {% else %}
-  {% render "empty_state", status: status %}
+    {% render 'empty_state', status: status %}
   {% endif %}
 </div>
 
-{% render "board_footer", disruptions: disruptions, mode: mode %}
+{% render 'board_footer', disruptions: disruptions, mode: mode %}

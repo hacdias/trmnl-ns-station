@@ -2,34 +2,14 @@
 strategy: polling
 no_screen_padding: 'no'
 dark_mode: 'no'
-static_data: ''
 polling_verb: get
-framework_version: 3.1.7
+framework_version: 3.1.1
 serverless_language: node
 polling_url: https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/{{mode}}?station={{station_code}}
 polling_headers: Cache-Control=no-cache&Ocp-Apim-Subscription-Key={{api_key}}
-polling_body: ''
 id: 390680
 oauth_enabled: 'false'
 oauth_pkce_enabled: 'no'
-oauth_authorize_url: ''
-oauth_token_url: ''
-oauth_scopes: ''
-oauth_scope_separator: ''
-oauth_refresh_url: ''
-oauth_auth_params: ''
-oauth_token_headers: ''
-oauth_token_site: ''
-oauth_token_params: ''
-oauth_token_request_auth_method: ''
-oauth_body_format: ''
-oauth_token_response_metadata: ''
-oauth_authorization_method: ''
-oauth_refresh_params: ''
-oauth_token_field_name: ''
-oauth_expiry_field_name: ''
-oauth_expiry_strategy: ''
-oauth_fixed_expiry_ms: ''
 custom_fields:
 - keyname: author_info
   name: About This Plugin
@@ -41,7 +21,7 @@ custom_fields:
 - keyname: api_key
   field_type: string
   name: API Key
-  description: NS Developer API Key for the Reisinformatie API, which is part of the Ns-App product (obtainable at <a href="https://apiportal.ns.nl/">https://apiportal.ns.nl/</a>).
+  description: NS Developer API Key for the Reisinformatie API (Ns-App product), obtainable at <a href="https://apiportal.ns.nl/">https://apiportal.ns.nl/</a>.
   placeholder: ns_api_key
 - keyname: station_code
   field_type: select
