@@ -3,14 +3,13 @@
     <div
       class="grid grid--cols-2 stretch-y gap--none"
       data-overflow="true"
-      data-overflow-counter="true"
       data-overflow-max-cols="2"
     >
       {% for service in services %}
         {% assign row_bg = 'bg--white' %}
         {% assign band = forloop.index0 | divided_by: 2 | modulo: 2 %}
         {% if band == 1 %}
-          {% assign row_bg = 'bg--gray-65' %}
+          {% assign row_bg = 'bg--gray-70' %}
         {% endif %}
         {% render 'service_row', service: service, logo_size: 'w--8', row_bg: row_bg %}
       {% endfor %}
