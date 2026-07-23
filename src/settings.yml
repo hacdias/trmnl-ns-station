@@ -431,5 +431,13 @@ custom_fields:
   - Departures: departures
   - Arrivals: arrivals
   default: departures
+- keyname: language
+  field_type: select
+  name: Language
+  description: Language for the on-screen board.
+  options:
+  - English: en
+  - Nederlands: nl
+  default: en
 name: NS Station
 refresh_interval: 15

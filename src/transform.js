@@ -1,5 +1,22 @@
+const strings = {
+  en: {
+    cancelled: 'Cancelled',
+    unknown: 'Unknown',
+    noData: 'No data. Check the API key and the station.',
+  },
+  nl: {
+    cancelled: 'Geannuleerd',
+    unknown: 'Onbekend',
+    noData: 'Geen gegevens. Controleer de API-sleutel en het station.',
+  },
+}
+
 function transform(input) {
   const payload = input.payload || {}
+
+  const lang =
+    input.trmnl?.plugin_settings?.custom_fields_values?.language || 'en'
+  const t = strings[lang] || strings.en
 
   // The response has either `departures` or `arrivals` depending on the polled URL.
   const isArrivals = Array.isArray(payload.arrivals)
@@ -36,9 +53,9 @@ function transform(input) {
       cancelled: !!d.cancelled,
       // Destination for departures, origin for arrivals.
       place: d.direction || d.origin || '',
-      subtitle: d.cancelled ? 'Geannuleerd' : via ? `via ${via}` : '',
+      subtitle: d.cancelled ? t.cancelled : via ? `via ${via}` : '',
       track: d.actualTrack || d.plannedTrack || '',
-      type: product.longCategoryName || product.shortCategoryName || 'Onbekend',
+      type: product.longCategoryName || product.shortCategoryName || t.unknown,
       operator: product.operatorCode || '',
     }
   })
@@ -47,14 +64,13 @@ function transform(input) {
   // or station on first setup), surface a hint instead of a bare empty board.
   let status = ''
   if (!hasPayload) {
-    status = input?.message
-      ? String(input.message)
-      : 'Geen gegevens. Controleer de API-sleutel en het station.'
+    status = input?.message ? String(input.message) : t.noData
   }
 
   return {
     services: services,
     mode: isArrivals ? 'arrivals' : 'departures',
+    language: lang,
     disruptions: input.meta?.numberOfDisruptions ?? 0,
     status: status,
   }

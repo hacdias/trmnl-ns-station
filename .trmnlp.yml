@@ -8,3 +8,4 @@ custom_fields:
   api_key: "{{env.NS_API_KEY}}"
   station_code: ehv
   mode: departures
+  language: en

@@ -11,8 +11,8 @@
       {% endfor %}
     </div>
   {% else %}
-    {% render 'empty_state', status: status %}
+    {% render 'empty_state', status: status, language: language %}
   {% endif %}
 </div>
 
-{% render 'board_footer', disruptions: disruptions, mode: mode %}
+{% render 'board_footer', disruptions: disruptions, mode: mode, language: language %}

@@ -52,26 +52,48 @@
 {% template empty_state %}
 <div class="flex flex--center w--full h--[60px]">
   <span class="description">
-    {%- if status and status != '' %}{{ status }}{% else %}Geen treinen beschikbaar{% endif -%}
+    {%- if status and status != '' -%}
+      {{- status -}}
+    {%- elsif language == 'nl' -%}
+      Geen treinen beschikbaar
+    {%- else -%}
+      No trains available
+    {%- endif -%}
   </span>
 </div>
 {% endtemplate %}
 
 {% template board_footer %}
 <div class="title_bar">
-  {% if mode == 'arrivals' %}
-    {% assign board_title = 'NS Aankomst van de treinen' %}
+  {% if language == 'nl' %}
+    {% if mode == 'arrivals' %}
+      {% assign board_title = 'NS Aankomsttijden' %}
+    {% else %}
+      {% assign board_title = 'NS Vertrektijden' %}
+    {% endif %}
   {% else %}
-    {% assign board_title = 'NS Vertrek van de treinen' %}
+    {% if mode == 'arrivals' %}
+      {% assign board_title = 'NS Arrivals' %}
+    {% else %}
+      {% assign board_title = 'NS Departures' %}
+    {% endif %}
   {% endif %}
   <span class="title">{{ board_title }}</span>
   {% if disruptions and disruptions > 0 %}
-    {% if disruptions == 1 %}
-      {% assign verstoring = '1 verstoring' %}
+    {% if language == 'nl' %}
+      {% if disruptions == 1 %}
+        {% assign disruption_text = '1 Storing' %}
+      {% else %}
+        {% assign disruption_text = disruptions | append: ' Storingen' %}
+      {% endif %}
     {% else %}
-      {% assign verstoring = disruptions | append: ' Storingen' %}
+      {% if disruptions == 1 %}
+        {% assign disruption_text = '1 Disruption' %}
+      {% else %}
+        {% assign disruption_text = disruptions | append: ' Disruptions' %}
+      {% endif %}
     {% endif %}
-    <span class="instance">{{ verstoring }}</span>
+    <span class="instance">{{ disruption_text }}</span>
   {% endif %}
 </div>
 {% endtemplate %}
