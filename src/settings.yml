@@ -37,7 +37,7 @@ custom_fields:
   category: travel
   description: NS Train Station was created by Henrique Dias.
   learn_more_url: https://hacdias.com
-  github_url: https://github.com/hacdias
+  github_url: https://github.com/hacdias/trmnl-ns-station
 - keyname: api_key
   field_type: string
   name: API Key
