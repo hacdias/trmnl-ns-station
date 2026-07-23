@@ -1,0 +1,455 @@
+---
+strategy: polling
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+framework_version: 3.1.7
+serverless_language: node
+polling_url: https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/{{mode}}?station={{station_code}}
+polling_headers: Cache-Control=no-cache&Ocp-Apim-Subscription-Key={{api_key}}
+polling_body: ''
+id: 390680
+oauth_enabled: 'false'
+oauth_pkce_enabled: 'no'
+oauth_authorize_url: ''
+oauth_token_url: ''
+oauth_scopes: ''
+oauth_scope_separator: ''
+oauth_refresh_url: ''
+oauth_auth_params: ''
+oauth_token_headers: ''
+oauth_token_site: ''
+oauth_token_params: ''
+oauth_token_request_auth_method: ''
+oauth_body_format: ''
+oauth_token_response_metadata: ''
+oauth_authorization_method: ''
+oauth_refresh_params: ''
+oauth_token_field_name: ''
+oauth_expiry_field_name: ''
+oauth_expiry_strategy: ''
+oauth_fixed_expiry_ms: ''
+custom_fields:
+- keyname: author_info
+  name: About This Plugin
+  field_type: author_bio
+  category: travel
+  description: NS Train Station was created by Henrique Dias.
+  learn_more_url: https://hacdias.com
+  github_url: https://github.com/hacdias
+- keyname: api_key
+  field_type: string
+  name: API Key
+  description: NS Developer API Key for the Reisinformatie API, which is part of the Ns-App product (obtainable at <a href="https://apiportal.ns.nl/">https://apiportal.ns.nl/</a>).
+  placeholder: ns_api_key
+- keyname: station_code
+  field_type: select
+  name: Station
+  description: Select the station to show departures from or arrivals to.
+  default: asd
+  options:
+  - Aalten: atn
+  - Abcoude: ac
+  - Akkrum: akm
+  - Alkmaar: amr
+  - Alkmaar Noord: amrn
+  - Almelo: aml
+  - Almelo de Riet: amri
+  - Almere Buiten: almb
+  - Almere Centrum: alm
+  - Almere Muziekwijk: almm
+  - Almere Oostvaarders: almo
+  - Almere Parkwijk: almp
+  - Almere Poort: ampo
+  - Alphen a/d Rijn: apn
+  - Amersfoort Centraal: amf
+  - Amersfoort Schothorst: amfs
+  - Amersfoort Vathorst: avat
+  - Amsterdam Amstel: asa
+  - Amsterdam Bijlmer ArenA: asb
+  - Amsterdam Centraal: asd
+  - Amsterdam Holendrecht: ashd
+  - Amsterdam Lelylaan: asdl
+  - Amsterdam Muiderpoort: asdm
+  - Amsterdam RAI: rai
+  - Amsterdam Science Park: assp
+  - Amsterdam Sloterdijk: ass
+  - Amsterdam Zuid: asdz
+  - Anna Paulowna: ana
+  - Apeldoorn: apd
+  - Apeldoorn De Maten: apdm
+  - Apeldoorn Osseveld: apdo
+  - Appingedam: apg
+  - Arkel: akl
+  - Arnemuiden: arn
+  - Arnhem Centraal: ah
+  - Arnhem Presikhaaf: ahpr
+  - Arnhem Velperpoort: ahp
+  - Arnhem Zuid: ahz
+  - Assen: asn
+  - Baarn: brn
+  - Bad Nieuweschans: nsch
+  - Baflo: bf
+  - Barendrecht: brd
+  - Barneveld Centrum: bnc
+  - Barneveld Noord: bnn
+  - Barneveld Zuid: bnz
+  - Bedum: bdm
+  - Beek-Elsloo: bk
+  - Beesd: bsd
+  - Beilen: bl
+  - Bergen op Zoom: bgn
+  - Best: bet
+  - Beverwijk: bv
+  - Bilthoven: bhv
+  - Blerick: br
+  - Bloemendaal: bll
+  - Bodegraven: bdg
+  - Borne: bn
+  - Boskoop: bsk
+  - Boskoop Snijdelwijk: bsks
+  - Boven-Hardinxveld: bhdv
+  - Bovenkarspel Flora: bkf
+  - Bovenkarspel-Grootebroek: bkg
+  - Boxmeer: bmr
+  - Boxtel: btl
+  - Breda: bd
+  - Breda-Prinsenbeek: bdpb
+  - Breukelen: bkl
+  - Brummen: bmn
+  - Buitenpost: bp
+  - Bunde: bde
+  - Bunnik: bnk
+  - Bussum Zuid: bsmz
+  - Capelle Schollevaar: cps
+  - Castricum: cas
+  - Chevremont: cvm
+  - Coevorden: co
+  - Cuijk: ck
+  - Culemborg: cl
+  - Daarlerveen: da
+  - Dalen: dln
+  - Dalfsen: dl
+  - De Vink: dvnk
+  - De Westereen: dwe
+  - Deinum: dei
+  - Delden: ddn
+  - Delft: dt
+  - Delft Campus: dtcp
+  - Delfzijl: dz
+  - Delfzijl West: dzw
+  - Den Dolder: dld
+  - Den Haag Centraal: gvc
+  - Den Haag HS: gv
+  - Den Haag Laan v NOI: laa
+  - Den Haag Mariahoeve: gvm
+  - Den Haag Moerwijk: gvmw
+  - Den Haag Ypenburg: ypb
+  - Den Helder: hdr
+  - Den Helder Zuid: hdrz
+  - Deurne: dn
+  - Deventer: dv
+  - Deventer Colmschate: dvc
+  - Didam: did
+  - Diemen: dmn
+  - Diemen Zuid: dmnz
+  - Dieren: dr
+  - Doetinchem: dtc
+  - Doetinchem De Huet: dtch
+  - Dordrecht: ddr
+  - Dordrecht Stadspolders: ddrs
+  - Dordrecht Zuid: ddzd
+  - Driebergen-Zeist: db
+  - Driehuis: drh
+  - Dronryp: drp
+  - Dronten: dron
+  - Duiven: dvn
+  - Duivendrecht: dvd
+  - Echt: ec
+  - Ede Centrum: edc
+  - Ede-Wageningen: ed
+  - Eemshaven: eem
+  - Eijsden: edn
+  - Eindhoven Centraal: ehv
+  - Eindhoven Strijp-S: ehs
+  - Elst: est
+  - Emmen: emn
+  - Emmen Zuid: emnz
+  - Enkhuizen: ekz
+  - Enschede: es
+  - Enschede De Eschmarke: ese
+  - Enschede Kennispark: esk
+  - Ermelo: eml
+  - Etten-Leur: etn
+  - Eygelshoven: egh
+  - Eygelshoven Markt: eghm
+  - Feanwâlden: fwd
+  - Franeker: fn
+  - Gaanderen: gdr
+  - Geldermalsen: gdm
+  - Geldrop: gp
+  - Geleen Oost: gln
+  - Geleen-Lutterade: lut
+  - Gilze-Rijen: gz
+  - Glanerbrug: gbr
+  - Goes: gs
+  - Goor: go
+  - Gorinchem: gr
+  - Gouda: gd
+  - Gouda Goverwelle: gdg
+  - Gramsbergen: gbg
+  - Grijpskerk: gk
+  - Groningen: gn
+  - Groningen Europapark: gerp
+  - Groningen Noord: gnn
+  - Grou-Jirnsum: gw
+  - Haarlem: hlm
+  - Haarlem Spaarnwoude: hlms
+  - Halfweg-Zwanenburg: hwzb
+  - Hardenberg: hdb
+  - Harderwijk: hd
+  - Hardinxveld Blauwe Zoom: hbzm
+  - Hardinxveld-Giessendam: gnd
+  - Haren: hrn
+  - Harlingen: hlg
+  - Harlingen Haven: hlgh
+  - Heemskerk: hk
+  - Heemstede-Aerdenhout: had
+  - Heerenveen: hr
+  - Heerhugowaard: hwd
+  - Heerlen: hrl
+  - Heerlen Woonboulevard: hrlw
+  - Heeze: hze
+  - Heiloo: hlo
+  - Heino: hno
+  - Helmond: hm
+  - Helmond 't Hout: hmh
+  - Helmond Brandevoort: hmbv
+  - Helmond Brouwhuis: hmbh
+  - Hemmen-Dodewaard: hmn
+  - Hengelo: hgl
+  - Hengelo Gezondheidspark: hglg
+  - Hengelo Oost: hglo
+  - Hillegom: hil
+  - Hilversum: hvs
+  - Hilversum Media Park: hvsm
+  - Hilversum Sportpark: hvsp
+  - Hindeloopen: hnp
+  - Hoensbroek: hb
+  - Hoevelaken: hvl
+  - Hollandsche Rading: hor
+  - Holten: hon
+  - Hoofddorp: hfd
+  - Hoogeveen: hgv
+  - Hoogezand-Sappemeer: hgz
+  - Hoogkarspel: hks
+  - Hoorn: hn
+  - Hoorn Kersenboogerd: hnk
+  - Horst-Sevenum: hrt
+  - Houten: htn
+  - Houten Castellum: htnc
+  - Houthem-St. Gerlach: sgl
+  - Hurdegaryp: hdg
+  - IJlst: ijt
+  - Kampen: kpn
+  - Kampen Zuid: kpnz
+  - Kapelle-Biezelinge: bzl
+  - Kerkrade Centrum: krd
+  - Kesteren: ktr
+  - Klarenbeek: kbk
+  - Klimmen-Ransdaal: kmr
+  - Koog aan de Zaan: kz
+  - Koudum-Molkwerum: kmw
+  - Krabbendijke: kbd
+  - Krommenie-Assendelft: kma
+  - Kropswolde: kw
+  - Kruiningen-Yerseke: krg
+  - Lage Zwaluwe: zlw
+  - Landgraaf: lg
+  - Lansingerland-Zoetermeer: llzm
+  - Leerdam: ldm
+  - Leeuwarden: lw
+  - Leeuwarden Camminghaburen: lwc
+  - Leiden Centraal: ledn
+  - Leiden Lammenschans: ldl
+  - Lelystad Centrum: lls
+  - Lichtenvoorde-Groenlo: ltv
+  - Lochem: lc
+  - Loppersum: lp
+  - Lunteren: ltn
+  - Maarheeze: mz
+  - Maarn: mrn
+  - Maarssen: mas
+  - Maastricht: mt
+  - Maastricht Noord: mtn
+  - Maastricht Randwyck: mtr
+  - Mantgum: mg
+  - Mariënberg: mrb
+  - Martenshoek: mth
+  - Meerssen: mes
+  - Meppel: mp
+  - Middelburg: mdb
+  - Mook-Molenhoek: mmlh
+  - Naarden-Bussum: ndb
+  - Nieuw Amsterdam: na
+  - Nieuw Vennep: nvp
+  - Nieuwerkerk a/d IJssel: nwk
+  - Nijkerk: nkk
+  - Nijmegen: nm
+  - Nijmegen Dukenburg: nmd
+  - Nijmegen Goffert: nmgo
+  - Nijmegen Heyendaal: nmh
+  - Nijmegen Lent: nml
+  - Nijverdal: nvd
+  - Nunspeet: ns
+  - Nuth: nh
+  - Obdam: obd
+  - Oisterwijk: ot
+  - Oldenzaal: odz
+  - Olst: ost
+  - Ommen: omn
+  - Oosterbeek: otb
+  - Opheusden: op
+  - Oss: o
+  - Oss West: ow
+  - Oudenbosch: odb
+  - Overveen: ovn
+  - Purmerend: pmr
+  - Purmerend Overwhere: pmo
+  - Purmerend Weidevenne: pmw
+  - Putten: pt
+  - Raalte: rat
+  - Ravenstein: rvs
+  - Reuver: rv
+  - Rheden: rh
+  - Rhenen: rhn
+  - Rijssen: rsn
+  - Rijswijk: rsw
+  - Rilland-Bath: rb
+  - Roermond: rm
+  - Roodeschool: rd
+  - Roosendaal: rsd
+  - Rosmalen: rs
+  - Rotterdam Alexander: rta
+  - Rotterdam Blaak: rtb
+  - Rotterdam Centraal: rtd
+  - Rotterdam Lombardijen: rlb
+  - Rotterdam Noord: rtn
+  - Rotterdam Zuid: rtz
+  - Ruurlo: rl
+  - "'s-Hertogenbosch": ht
+  - "'s-Hertogenbosch Oost": hto
+  - Santpoort Noord: sptn
+  - Santpoort Zuid: sptz
+  - Sassenheim: ssh
+  - Sauwerd: swd
+  - Schagen: sgn
+  - Scheemda: sda
+  - Schiedam Centrum: sdm
+  - Schin op Geul: sog
+  - Schinnen: sn
+  - Schiphol Airport: shl
+  - Sittard: std
+  - Sliedrecht: sdt
+  - Sliedrecht Baanhoek: sdtb
+  - Sneek: sk
+  - Sneek Noord: sknd
+  - Soest: st
+  - Soest Zuid: stz
+  - Soestdijk: sd
+  - Spaubeek: sbk
+  - Stavoren: stv
+  - Stedum: stm
+  - Steenwijk: swk
+  - Susteren: srn
+  - Swalmen: sm
+  - "'t Harde": hde
+  - Tegelen: tg
+  - Terborg: tbg
+  - Tiel: tl
+  - Tiel Passewaaij: tpsw
+  - Tilburg: tb
+  - Tilburg Reeshof: tbr
+  - Tilburg Universiteit: tbu
+  - Twello: twl
+  - Uitgeest: utg
+  - Uithuizen: uhz
+  - Uithuizermeeden: uhm
+  - Usquert: ust
+  - Utrecht Centraal: ut
+  - Utrecht Leidsche Rijn: utlr
+  - Utrecht Lunetten: utln
+  - Utrecht Overvecht: uto
+  - Utrecht Terwijde: utt
+  - Utrecht Vaartsche Rijn: utvr
+  - Utrecht Zuilen: utzl
+  - Valkenburg: vk
+  - Varsseveld: vsv
+  - Veendam: vdm
+  - Veenendaal Centrum: vndc
+  - Veenendaal West: vndw
+  - Veenendaal-De Klomp: klp
+  - Velp: vp
+  - Venlo: vl
+  - Venray: vry
+  - Vierlingsbeek: vlb
+  - Vleuten: vtn
+  - Vlissingen: vs
+  - Vlissingen Souburg: vss
+  - Voerendaal: vdl
+  - Voorburg: vb
+  - Voorhout: vh
+  - Voorschoten: vst
+  - Voorst-Empe: vem
+  - Vorden: vd
+  - Vriezenveen: vz
+  - Vroomshoop: vhp
+  - Vught: vg
+  - Waddinxveen: wad
+  - Waddinxveen Noord: wadn
+  - Waddinxveen Triangel: wadt
+  - Warffum: wfm
+  - Weert: wt
+  - Weesp: wp
+  - Wehl: wl
+  - Westervoort: wtv
+  - Wezep: wz
+  - Wierden: wdn
+  - Wijchen: wc
+  - Wijhe: wh
+  - Winschoten: ws
+  - Winsum: wsm
+  - Winterswijk: ww
+  - Winterswijk West: www
+  - Woerden: wd
+  - Wolfheze: wf
+  - Wolvega: wv
+  - Workum: wk
+  - Wormerveer: wm
+  - Zaandam: zd
+  - Zaandam Kogerveld: zdk
+  - Zaandijk Zaanse Schans: zzs
+  - Zaltbommel: zbm
+  - Zandvoort aan Zee: zvt
+  - Zetten-Andelst: za
+  - Zevenaar: zv
+  - Zevenbergen: zvb
+  - Zoetermeer: ztm
+  - Zoetermeer Oost: ztmo
+  - Zuidbroek: zb
+  - Zuidhorn: zh
+  - Zutphen: zp
+  - Zwijndrecht: zwd
+  - Zwolle: zl
+  - Zwolle Stadshagen: zlsh
+- keyname: mode
+  field_type: select
+  name: Board Type
+  description: Show departures from or arrivals to the station.
+  options:
+  - Departures: departures
+  - Arrivals: arrivals
+  default: departures
+name: NS Station
+refresh_interval: 15
