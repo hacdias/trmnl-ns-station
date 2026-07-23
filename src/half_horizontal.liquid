@@ -1,10 +1,6 @@
 <div class="layout layout--col layout--stretch-y">
   {% if services and services.size > 0 %}
-    <div
-      class="grid grid--cols-2 stretch-y gap--none"
-      data-overflow="true"
-      data-overflow-max-cols="2"
-    >
+    <div class="grid grid--cols-2 stretch-y gap--none" data-overflow="true">
       {% for service in services %}
         {% assign row_bg = 'bg--white' %}
         {% assign band = forloop.index0 | divided_by: 2 | modulo: 2 %}
