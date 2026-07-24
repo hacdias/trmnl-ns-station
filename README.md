@@ -7,7 +7,7 @@ A [TRMNL](https://trmnl.com/) plugin which allows you to see the coming Departur
 You can run this plugin locally for development by copying `.env.example` into `.env` and filling the required environment variables. Then, run:
 
 ```
-docker run --rm --pull=always -p 4567:4567 --env-file .env -v "$PWD:/plugin" trmnl/trmnlp serve
+./bin/trmnlp serve
 ```
 
 ## Contributing
