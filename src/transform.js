@@ -1,11 +1,9 @@
 const strings = {
   en: {
-    cancelled: 'Cancelled',
     unknown: 'Unknown',
     noData: 'No data. Check the API key and the station.',
   },
   nl: {
-    cancelled: 'Geannuleerd',
     unknown: 'Onbekend',
     noData: 'Geen gegevens. Controleer de API-sleutel en het station.',
   },
@@ -53,7 +51,7 @@ function transform(input) {
       cancelled: !!d.cancelled,
       // Destination for departures, origin for arrivals.
       place: d.direction || d.origin || '',
-      subtitle: d.cancelled ? t.cancelled : via ? `via ${via}` : '',
+      subtitle: via ? `via ${via}` : '',
       track: d.actualTrack || d.plannedTrack || '',
       type: product.longCategoryName || product.shortCategoryName || t.unknown,
       operator: product.operatorCode || '',
